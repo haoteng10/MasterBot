@@ -24,11 +24,11 @@ flags = {
     "🇰🇷": "ko", #Korean
     "🇻🇳": "vi", #Vietnamese
     "🇸🇦": "ar", #Arabic
-    "🇭🇺": "hu", #Hungarian,
-    "🇫🇮": "fi", #Finnish,
+    "🇭🇺": "hu", #Hungarian
+    "🇫🇮": "fi", #Finnish
     "🇳🇴": "no", #Norwegian
     "🇱🇦": "lo", #Laos
-    "🇵🇱": "pl", #Polish,
+    "🇵🇱": "pl", #Polish
     "🇺🇦": "uk", #Ukrainian
     "🇵🇹": "pt", #Portuguese
     "🇲🇾": "ms", #Malay
