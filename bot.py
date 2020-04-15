@@ -110,7 +110,7 @@ class BotClient(discord.Client):
                     newStr.append(shortened_url)
                 else:
                     shortened_url = short_url(word[1:-1])
-                    newStr.append(shortened_url)
+                    newStr.append("`" + shortened_url + "`")
                 continue
             newStr.append(word)
 
