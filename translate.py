@@ -8,5 +8,4 @@ translator = GoogleTranslator(service_urls=[
 
 def translate(input_txt, dest):
     translation = translator.translate(input_txt, dest=dest)
-    # print(translate)
     return translation

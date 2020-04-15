@@ -77,8 +77,6 @@ class BotClient(discord.Client):
             if ("http://" in reaction.message.content or "https://" in reaction.message.content):
                 outputMessage = self.convertURL(reaction.message.content, reaction.message.author)
                 await channel.send(outputMessage)
-                # await message.delete()
-
         try:
             translate(reaction.message.content, flags[str(reaction.emoji)])
         except KeyError:
@@ -87,7 +85,17 @@ class BotClient(discord.Client):
             return
 
         translated_message = translate(reaction.message.content, flags[str(reaction.emoji)])
-        await channel.send('{0} (Translated from {1} to {2})'.format(translated_message.text, LANGUAGES[translated_message.extra_data["original-language"]], LANGUAGES[flags[str(reaction.emoji)]]))
+
+        origin_short_lang = translated_message.extra_data["original-language"]
+        origin_emoji = ""
+        for emoji, lang in flags.items():
+            if lang == origin_short_lang:
+                origin_emoji = emoji
+
+        # await channel.send('{0} (Translated from {1} to {2})'.format(translated_message.text, LANGUAGES[translated_message.extra_data["original-language"]], LANGUAGES[flags[str(reaction.emoji)]]))
+        embed = discord.Embed(title="Translation: ", color=discord.Color.purple())
+        embed.add_field(name="From {2} {0} to {3} {1}".format(LANGUAGES[origin_short_lang], LANGUAGES[flags[str(reaction.emoji)]], origin_emoji, reaction.emoji), value=translated_message.text)
+        await channel.send(embed=embed)
 
     def convertURL(self, content, author):
         splitStr = content.split()
