@@ -1,5 +1,5 @@
 # MasterBot
-A bot to make everything easier!
+A bot that makes everything easier!
 
 ## Commands
 1. `ping` --> pong
