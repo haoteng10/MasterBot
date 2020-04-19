@@ -8,5 +8,5 @@ A bot to make everything easier!
 
 ## Available Actions
 1. React with a `🍉` --> Converts long URLs into shortened URLs
-2. React with a flag emoji --> Translates the message into the language of the country represented by the flag.
+2. React with a flag emoji --> Translates the message into the language of the country represented by the flag
 
